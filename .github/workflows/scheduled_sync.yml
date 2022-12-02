@@ -19,10 +19,10 @@ jobs:
           # git rebase をデフォルトに設定
           git config --global pull.rebase merges
 
-          # 過去のコミットが取得されないと、コミット歴に不統合が発生した旨のエラーが出ます。
+          # 過去のコミットが取得されないと、コミット歴に不統合が発生した旨のエラーが発生。
           git pull --unshallow
 
-          # フォーク元のリポジトリをリモート先として "upstream" に命名
+          # フォーク元のリポジトリをリモート先として "upstream" に変更
           git remote add upstream ${REPO_FORK}
           
           # upstream のブランチをローカルに取得
