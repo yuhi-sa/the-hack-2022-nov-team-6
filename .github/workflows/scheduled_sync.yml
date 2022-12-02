@@ -13,8 +13,8 @@ jobs:
         env:
           REPO_FORK: https://github.com/yassun-youtube/the-hack-2022-nov-team-6.git
         run: |
-          git config --global user.name ${NAME}
-          git config --global user.email ${EMAIL}
+          git config --global user.name ${{ secrets.NAME }}
+          git config --global user.email ${{ secrets.EMAIL }}
           
           # git rebase をデフォルトに設定
           git config --global pull.rebase merges
