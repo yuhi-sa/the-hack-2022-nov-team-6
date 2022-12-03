@@ -3,7 +3,7 @@
 ## デプロイリンク
 https://the-hack-2022-nov-team-6.vercel.app
 
-[the-hack-2022-nov-team-6](https://github.com/yuhi-sa/the-hack-2022-nov-team-6/blob/main/.github/workflows/scheduled_sync.yml)でフォークしてvercelにデプロイしています。[scheduled_sync.yml](https://github.com/yuhi-sa/the-hack-2022-nov-team-6/blob/main/.github/workflows/scheduled_sync.yml)で一定時間ごとにmainブランチを監視し更新します。
+[the-hack-2022-nov-team-6](https://github.com/yuhi-sa/the-hack-2022-nov-team-6/blob/main/.github/workflows/scheduled_sync.yml)でフォークしてvercelにデプロイしています。
 
 ## 決まりごと
 
