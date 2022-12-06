@@ -46,3 +46,4 @@ export default async function Sample() {
     return <p>エラーが発生しました。</p>
   }
   }
+  
