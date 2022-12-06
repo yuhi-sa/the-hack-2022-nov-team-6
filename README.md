@@ -2,11 +2,17 @@
 
 # 起動方法
 ## 環境変数
-NOTION_DATABASE_IDとNOTION_ACCESS_TOKENを環境変数に入れて起動してください。  
-値はnotionのデータベース>環境変数のページに記載しています。
+以下の値を環境変数に追加してください。
+
+- NOTION_POSTS_DATABASE_ID
+- NOTION_USERS_DATABASE_ID
+- NOTION_ACCESS_TOKEN
+
+値は[環境変数のページ](https://www.notion.so/a88af772f6aa41bd9c6fd47e33f3d5e9)を参照
+
+## 起動
 ```
-export NOTION_DATABASE_ID=[NOTION_DATABASE_IDに変えてください]
-export NOTION_ACCESS_TOKEN=[NOTION_ACCESS_TOKENに変えてください]
+npm run dev
 ```
 
 ## 決まりごと
