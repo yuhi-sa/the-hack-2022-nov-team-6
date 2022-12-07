@@ -32,3 +32,5 @@ jobs:
           git checkout main
           git merge --no-edit upstream/main
           git push origin main
+
+          curl -X POST --data-urlencode "payload={\"channel\": \"#チーム開発_チーム6\", \"username\": \"webhookbot\", \"text\": \" Deployed to vercel. Check https://the-hack-2022-nov-team-6.vercel.app \"}" ${WEBHOOK_URL}
