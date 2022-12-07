@@ -1,5 +1,20 @@
 # the-hack-2022-nov-team-6
 
+## 起動方法
+### 環境変数
+以下の値を環境変数に追加してください。
+
+- NOTION_POSTS_DATABASE_ID
+- NOTION_USERS_DATABASE_ID
+- NOTION_ACCESS_TOKEN
+
+値は[環境変数のページ](https://www.notion.so/a88af772f6aa41bd9c6fd47e33f3d5e9)を参照
+
+#＃# 起動
+```
+npm run dev
+```
+
 ## デプロイリンク
 https://the-hack-2022-nov-team-6.vercel.app
 
