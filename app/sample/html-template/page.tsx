@@ -1,10 +1,12 @@
+import { blogConfig } from '../../../blog.config'
+
 export default function HtmlTemplate() {
   return (
     <>
       <header className='z-50 py-4 bg-zinc-800'>
         <div className='container md:flex md:justify-between'>
           <h1 className='text-xl font-bold tracking-wider' aria-label='Brand'>
-            Team Six
+            {blogConfig.blogTitle}
           </h1>
           <nav aria-label='Global'>
             <ul className='md:flex md:gap-x-4'>
@@ -31,7 +33,7 @@ export default function HtmlTemplate() {
           className='w-full aspect-[3/2] lg:aspect-[2/1] object-cover'
         />
         <p className='absolute bottom-3 right-0 mx-4 pt-1 px-2 text-white bg-black/40'>
-          このブログの説明がここにはいります。このブログの説明がここにはいります。
+          {blogConfig.blogDetails}
         </p>
       </div>
       <div className='flex flex-col lg:flex-row lg:justify-between container lg:max-w-5xl lg:gap-12 px-6 pb-12'>
@@ -281,8 +283,8 @@ export default function HtmlTemplate() {
               <a href='#'>サイトマップ</a>
             </li>
           </ul>
-          <p className='text-lg font-bold my-8 tracking-wider'>Team Six</p>
-          <p className='text-sm'>© 2022 Team Six</p>
+          <p className='text-lg font-bold my-8 tracking-wider'>{blogConfig.blogTitle}</p>
+          <p className='text-sm'>{blogConfig.copyright}</p>
         </div>
       </footer>
     </>
