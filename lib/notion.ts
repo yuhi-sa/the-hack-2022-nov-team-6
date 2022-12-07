@@ -28,8 +28,8 @@ const lbToBr = (txt: string): string => {
 
 export async function getPostsData(): Promise<Post[]> {
   if (
-    process.env.NOTION_ACCESS_TOKEN === undefined ||
-    process.env.NOTION_POSTS_DATABASE_ID === undefined
+    typeof process.env.NOTION_ACCESS_TOKEN === 'undefined' ||
+    typeof process.env.NOTION_POSTS_DATABASE_ID === 'undefined'
   ) {
     throw new Error('NOTION_ACCESS_TOKEN or NOTION_POSTS_DATABASE_ID is not defined')
   }
@@ -68,8 +68,8 @@ export async function getPostsData(): Promise<Post[]> {
 
 export async function getUsersData(): Promise<User[]> {
   if (
-    process.env.NOTION_ACCESS_TOKEN === undefined ||
-    process.env.NOTION_USERS_DATABASE_ID === undefined
+    typeof process.env.NOTION_ACCESS_TOKEN === 'undefined' ||
+    typeof process.env.NOTION_USERS_DATABASE_ID === 'undefined'
   ) {
     throw new Error('NOTION_ACCESS_TOKEN or NOTION_USERS_DATABASE_ID is not defined')
   }
