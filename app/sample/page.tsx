@@ -13,12 +13,12 @@ export default async function Sample() {
 
         <h1>投稿データ</h1>
         {posts.map((post) =>{
-          return <div key={post.post_id}>
+          return <div key={post.postId}>
               <p>---</p>
               <h1>タイトル：{post.title}</h1>
               <h2>カテゴリ：{post.category}</h2>
-              <h2>作成日：{post.created_at}</h2>
-              <h2>投稿日：{post.published_at}</h2>
+              <h2>作成日：{post.createdAt}</h2>
+              <h2>投稿日：{post.publishedAt}</h2>
               <img src={post.thumbnail} alt={post.title} width='50px'/>
               <h2>本文</h2>
               <div dangerouslySetInnerHTML={{__html: post.text}} />
@@ -30,7 +30,7 @@ export default async function Sample() {
             
         <h1>ユーザデータ</h1>
         {users.map((user)=>{
-          return <div key={user.user_id}>
+          return <div key={user.userId}>
               <h1>ユーザー名：{user.name}</h1>
               <h2>Twitter：{user.twitter}</h2>
               <h2>Instagram：{user.instagram}</h2>

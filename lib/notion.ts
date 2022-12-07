@@ -1,19 +1,19 @@
 import {Client} from '@notionhq/client'
 
 export type Post = {
-  post_id: number
+  postId: number
   title: string,
-  is_published: boolean,
-  created_at: string,
-  published_at: string,
+  isPublished: boolean,
+  createdAt: string,
+  publishedAt: string,
   thumbnail: string,
   category: string,
-  user_id: number,
+  userId: number,
   text: string
 }
 
 export type User = {
-  user_id: number,
+  userId: number,
   twitter: string,
   instagram: boolean,
   name: string,
@@ -36,24 +36,24 @@ export async function getPostsData(): Promise<Post[]> {
   const response = await notion.databases.query({ database_id : process.env.NOTION_POSTS_DATABASE_ID })
   const posts = response.results.map( (result:any) => {    
     try {
-      const post_id = result.properties['post_id'].number
+      const postId = result.properties['post_id'].number
       const title = result.properties['title'].title[0].plain_text
-      const is_published = result.properties['is_published'].select.name
-      const created_at = result.properties['created_at'].created_time
-      const published_at = result.properties['published_at'].date.start
+      const isPublished = result.properties['is_published'].select.name
+      const createdAt = result.properties['created_at'].created_time
+      const publishedAt = result.properties['published_at'].date.start
       const thumbnail = result.properties['thumbnail'].url
       const category = result.properties['category'].multi_select[0].name
-      const user_id = result.properties['user_id'].number
+      const userId = result.properties['user_id'].number
       const text = lbToBr(result.properties['text'].rich_text[0].plain_text)
       return{
-        post_id,
+        postId,
         title,
-        is_published,
-        created_at,
-        published_at,
+        isPublished,
+        createdAt,
+        publishedAt,
         thumbnail,
         category,
-        user_id,
+        userId,
         text
       } as Post
     } catch(error) {
@@ -73,14 +73,14 @@ export async function getUsersData(): Promise<User[]> {
   const response = await notion.databases.query({ database_id : process.env.NOTION_USERS_DATABASE_ID })
   const users = response.results.map( (result:any) => {    
     try {
-      const user_id = result.properties['user_id'].number
+      const userId = result.properties['user_id'].number
       const twitter = result.properties['twitter'].rich_text[0].plain_text
       const instagram = result.properties['instagram'].rich_text[0].plain_text
       const name = result.properties['name'].title[0].plain_text
       const icon = result.properties['icon'].url
       const text = lbToBr(result.properties['text'].rich_text[0].plain_text)
       return{
-        user_id,
+        userId,
         twitter,
         instagram,
         name,
