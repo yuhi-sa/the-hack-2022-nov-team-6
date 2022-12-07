@@ -12,6 +12,7 @@ module.exports = {
         base: '#b2c4dd',
         link: '#51cbda',
         bg: '#0f172a',
+        // NOTE: 必要になった時のための primary カラーセット
         // primary: {
         //   100: '#E0D8CC', // 使用: text-primary-100, bg-primary-100
         //   200: '#C1B199',
