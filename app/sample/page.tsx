@@ -21,7 +21,7 @@ export default async function Sample() {
               <h2>投稿日：{post.publishedAt}</h2>
               <img src={post.thumbnail} alt={post.title} width='50px'/>
               <h2>本文</h2>
-              <div dangerouslySetInnerHTML={{ __html: post.text }} />
+              <div dangerouslySetInnerHTML={{ __html: post.markdown }} />
             </div>
         })}
 
@@ -35,7 +35,7 @@ export default async function Sample() {
               <h2>Instagram：{user.instagram}</h2>
               <img src={user.icon} alt={user.name} width='50px' />
               <h2>本文</h2>
-              <div dangerouslySetInnerHTML={{ __html: user.text }} />
+              <div dangerouslySetInnerHTML={{ __html: user.markdown }} />
             </div>
         })}
       </>
