@@ -103,7 +103,7 @@ async function getTextData(id: string): Promise<string> {
   const n2m = new NotionToMarkdown({ notionClient: notion })
   const mdblocks = await n2m.pageToMarkdown(id)
   const mdString = n2m.toMarkdownString(mdblocks)
-  const content  = grayMatter(mdString)
-  const html = marked.parse(content.content)
+  const contents  = grayMatter(mdString)
+  const html = marked.parse(contents.content)
   return html
   }
