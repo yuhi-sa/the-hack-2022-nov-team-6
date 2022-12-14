@@ -32,18 +32,22 @@ const initNotionClient = (): Client => {
   return new Client({ auth: process.env.NOTION_ACCESS_TOKEN })
 }
 
-function parseStrToBoolean(str:string) {
-  return str == 'true' ? true : false
-}
-
 export async function getPostsData(): Promise<Post[]> {
   const notion = initNotionClient()
-  const response = await notion.databases.query({ database_id : process.env.NOTION_POSTS_DATABASE_ID as string })
+  const response = await notion.databases.query({ database_id : process.env.NOTION_POSTS_DATABASE_ID as string,
+    filter: {
+      and: [{
+        "property": "is_published",
+        "select": {
+          "equals": 'true'
+        }
+      }]
+    }})
   const posts = await Promise.all(response.results.map( async (result:any) => {    
     try {
       const postId = result.properties['post_id'].number
       const title = result.properties['title'].title[0].plain_text
-      const isPublished = parseStrToBoolean(result.properties['is_published'].select.name)
+      const isPublished = result.properties['is_published'].select.name
       const createdAt = result.properties['created_at'].created_time
       const publishedAt = result.properties['published_at'].date.start
       const thumbnail = result.properties['thumbnail'].url
