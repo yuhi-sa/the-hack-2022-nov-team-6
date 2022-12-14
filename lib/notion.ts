@@ -96,13 +96,25 @@ export async function getPostData(postId: Number): Promise<Post> {
      title: response.results[0].properties['title'].title[0].plain_text,
      isPublished: response.results[0].properties['is_published'].select.name,
      createdAt: response.results[0].properties['created_at'].created_time,
-     publishedAt: response.results[0].properties['published_at'].date.start,
+     publishedAt: formatDatetime(response.results[0].properties['published_at'].date.start),
      thumbnail: response.results[0].properties['thumbnail'].url,
      category: response.results[0].properties['category'].multi_select[0].name,
      userId: response.results[0].properties['user_id'].number,
      html: await getHtmlData(response.results[0].id)
   }
   return post
+}
+
+// TODO: こいつの呼び出し方は要検討/リファクタ
+const formatDatetime = (datetime: string) => {
+  const date = new Date(datetime);
+  const yyyy = `${date.getFullYear()}`;
+  // .slice(-2)で文字列中の末尾の2文字を取得する
+  // `0${date.getHoge()}`.slice(-2) と書くことで０埋めをする
+  const MM = `0${date.getMonth() + 1}`.slice(-2); // getMonth()の返り値は0が基点
+  const dd = `0${date.getDate()}`.slice(-2);
+
+  return `${yyyy}年${MM}月${dd}日`;
 }
 
 export async function getUsersData(): Promise<User[]> {
