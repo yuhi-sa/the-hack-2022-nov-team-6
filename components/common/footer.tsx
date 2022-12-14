@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { blogConfig } from '../../blog.config'
+import { blogConfig } from '../../../blog.config'
 
 export default function footer() {
   return (
