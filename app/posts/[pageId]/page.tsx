@@ -16,7 +16,7 @@ async function Post(params: params) {
         </h3>
         <p className='text-sm mt-3'>
           <time dateTime='2022-12-02T11:30:00.000Z' className='mr-4'>
-            {formatDatetime(post.publishedAt)}
+            {post.publishedAt}
           </time>
           <span>■ カテゴリー A</span>
         </p>
@@ -30,18 +30,6 @@ async function Post(params: params) {
       </section>
     </div>
   )
-}
-
-// TODO: postを作成するときからフォーマットしても良いかもしれない
-const formatDatetime = (datetime: string) => {
-  const date = new Date(datetime);
-  const yyyy = `${date.getFullYear()}`;
-  // .slice(-2)で文字列中の末尾の2文字を取得する
-  // `0${date.getHoge()}`.slice(-2) と書くことで０埋めをする
-  const MM = `0${date.getMonth() + 1}`.slice(-2); // getMonth()の返り値は0が基点
-  const dd = `0${date.getDate()}`.slice(-2);
-
-  return `${yyyy}年${MM}月${dd}日`;
 }
 
 export default Post
