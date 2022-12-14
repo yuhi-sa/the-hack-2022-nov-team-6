@@ -1,25 +1,25 @@
 import Link from 'next/link'
 import { blogConfig } from '../../blog.config'
 
-export default function hooter() {
+export default function footer() {
   return (
     <section className='bg-gray-200'>
       <div className='max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8'>
         <nav className='flex flex-wrap justify-center -mx-5 -my-2'>
           <div className='px-5 py-2'>
-            <a href='#' className='text-xl leading-6 text-gray-600 hover:text-gray-900'>
+            <Link href='#' className='text-xl leading-6 text-gray-600 hover:text-gray-900'>
               Home
-            </a>
+            </Link>
           </div>
           <div className='px-5 py-2'>
-            <a href='#' className='text-xl leading-6 text-gray-600 hover:text-gray-900'>
+            <Link href='#' className='text-xl leading-6 text-gray-600 hover:text-gray-900'>
               About
-            </a>
+            </Link>
           </div>
           <div className='px-5 py-2'>
-            <a href='#' className='text-lg leading-6 text-gray-600 hover:text-gray-900'>
+            <Link href='#' className='text-lg leading-6 text-gray-600 hover:text-gray-900'>
               記事一覧
-            </a>
+            </Link>
           </div>
           <div className='px-5 py-2'>
             <Link
