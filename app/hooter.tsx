@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { blogConfig } from '../../blog.config'
 
 export default function hooter() {
   return (
@@ -29,7 +30,9 @@ export default function hooter() {
             </Link>
           </div>
         </nav>
-        <p className='mt-8 text-base leading-6 text-center text-gray-500'>© 2016-2022 chinyuri</p>
+        <p className='mt-8 text-base leading-6 text-center text-gray-500'>
+          <Link href='/'>{blogConfig.copyright}</Link>
+        </p>
       </div>
     </section>
   )
