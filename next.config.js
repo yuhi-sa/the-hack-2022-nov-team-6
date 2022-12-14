@@ -5,9 +5,9 @@ const nextConfig = {
   experimental: {
     appDir: true,
   },
-  // images: {
-  //   domains: ['*'],
-  // },
+  images: {
+    domains: ['picsum.photos'],
+  },
 }
 
 module.exports = nextConfig
