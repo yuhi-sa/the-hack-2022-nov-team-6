@@ -6,10 +6,10 @@ type params = {
   }
 }
 
-async function Article(params: params) {
+async function Post(params: params) {
   const post = await getPostData(Number(params.params.pageId))
   return (
-    <>
+    <div>
       <div>
         <h3 className='font-bold'>
           {post.title}
@@ -26,9 +26,9 @@ async function Article(params: params) {
         alt='thumbnail'
         className='aspect-[3/2] object-cover rounded-lg'
       />
-      <article className="prose  lg:prose-xl prose-stone" dangerouslySetInnerHTML={{ __html: post.html }}>
-      </article>
-    </>
+      <section className="prose  lg:prose-xl prose-stone" dangerouslySetInnerHTML={{ __html: post.html }}>
+      </section>
+    </div>
   )
 }
 
@@ -44,4 +44,4 @@ const formatDatetime = (datetime: string) => {
   return `${yyyy}年${MM}月${dd}日`;
 }
 
-export default Article
+export default Post
