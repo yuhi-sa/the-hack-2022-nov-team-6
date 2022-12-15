@@ -1,28 +1,16 @@
-import Header from '../components/common/Header'
+import List from "../components/List";
+import { getPostsData } from "../lib/notion";
 
-export default function Home() {
+
+export default async function Home() {
+  const posts = await getPostsData()
+  if (posts.length === 0) {
+    return <p>投稿がありません。</p>
+  }
+
   return (
     <>
-      <Header />
-      {/*<div className='container py-12'>*/}
-      {/*  <main>*/}
-      {/*    <article className='prose'>*/}
-      {/*      <h2>タイトル h2 です</h2>*/}
-      {/*      <p>*/}
-      {/*        段落1です。ダミーコピーです手はおっかさんの演奏硝子屋をセロに思ったばこだた。それから思わ口まし勝たしはでまた箱のダミーコピーです上手どもっさと俄たますて、みんなまでぶんを弾いとだまし。*/}
-      {/*      </p>*/}
-      {/*      <p>*/}
-      {/*        段落2です。ダミーコピーです手はおっかさんの演奏硝子屋をセロに思ったばこだた。それから思わ口まし勝たしはでまた箱のダミーコピーです上手どもっさと俄たますて、みんなまでぶんを弾いとだまし。*/}
-      {/*      </p>*/}
-      {/*      <ul>*/}
-      {/*        <li>箇条書きリスト1</li>*/}
-      {/*        <li>箇条書きリスト2</li>*/}
-      {/*        <li>箇条書きリスト3</li>*/}
-      {/*      </ul>*/}
-      {/*    </article>*/}
-      {/*  </main>*/}
-      {/*</div>*/}
-      {/*<p>[フッターコンポーネントが入ります]</p>*/}
+      <List posts={posts} />
     </>
   )
 }

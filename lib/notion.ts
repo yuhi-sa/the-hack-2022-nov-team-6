@@ -1,6 +1,7 @@
 import { Client } from '@notionhq/client'
 import { notFound } from "next/navigation"
 import grayMatter from 'gray-matter'
+import { parseISO, format } from 'date-fns'
 import { marked } from "marked"
 import { NotionToMarkdown } from 'notion-to-md'
 
@@ -40,12 +41,23 @@ export async function getPostsData(): Promise<Post[]> {
   const response = await notion.databases.query({ database_id : process.env.NOTION_POSTS_DATABASE_ID as string,
     filter: {
       and: [{
-        "property": "is_published",
-        "select": {
-          "equals": 'true'
+        property: "is_published",
+        select: {
+          equals: 'true'
+        }
+      },
+      {
+        property: "post_id",
+        number: {
+          is_not_empty: true
         }
       }]
-    }})
+    },
+    sorts: [{
+        property: "published_at",
+        direction: 'descending',
+    }]  
+  })
   const posts = await Promise.all(response.results.map( async (result:any) => {    
     try {
       const postId = result.properties['post_id'].number
@@ -77,52 +89,37 @@ export async function getPostsData(): Promise<Post[]> {
   return posts
 }
 
-export async function getPostData(postId: Number): Promise<Post> {
+export async function getPostData(postId: number): Promise<Post> {
   const notion = initNotionClient()
-  const and: any = [
-    {
-      property: "post_id",
-      number: {
-        equals: postId,
-      },
-    },
-  ]
+
   const response = await notion.databases.query({ 
     database_id : process.env.NOTION_POSTS_DATABASE_ID as string,
     filter: {
-      and: and,
+      and: [{
+        property: "post_id",
+        number: {
+          equals: postId,
+        },
+      }]
     }
-  }) as any // TODO: anyを消したい
+  }) as any
 
   if (typeof response.results[0] == 'undefined') {
     notFound()
   }
 
-  // TODO:エラーハンドリングいるかも
   const post: Post = {
      postId: response.results[0].properties['post_id'].number,
      title: response.results[0].properties['title'].title[0].plain_text,
      isPublished: response.results[0].properties['is_published'].select.name,
      createdAt: response.results[0].properties['created_at'].created_time,
-     publishedAt: formatDatetime(response.results[0].properties['published_at'].date.start),
+     publishedAt: format(parseISO(response.results[0].properties['published_at'].date.start), 'yyyy年MM月dd日'),
      thumbnail: response.results[0].properties['thumbnail'].url,
      category: response.results[0].properties['category'].multi_select[0].name,
      userId: response.results[0].properties['user_id'].number,
      html: await getHtmlData(response.results[0].id)
   }
   return post
-}
-
-// TODO: こいつの呼び出し方は要検討/リファクタ
-const formatDatetime = (datetime: string) => {
-  const date = new Date(datetime);
-  const yyyy = `${date.getFullYear()}`;
-  // .slice(-2)で文字列中の末尾の2文字を取得する
-  // `0${date.getHoge()}`.slice(-2) と書くことで０埋めをする
-  const MM = `0${date.getMonth() + 1}`.slice(-2); // getMonth()の返り値は0が基点
-  const dd = `0${date.getDate()}`.slice(-2);
-
-  return `${yyyy}年${MM}月${dd}日`;
 }
 
 export async function getUsersData(): Promise<User[]> {
