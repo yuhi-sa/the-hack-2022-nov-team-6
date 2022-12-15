@@ -20,9 +20,9 @@ jobs:
         DIFF=$(git diff HEAD upstream/main)
         if [ -z "$DIFF" ]; then
           echo "No differences found."
-          git push --force-with-lease
-          curl -X POST --data-urlencode "payload={\"channel\": \"#チーム開発_チーム6\", \"username\": \"webhookbot\", \"text\": \" Deployed to vercel. Check https://the-hack-2022-nov-team-6.vercel.app \"}" ${{ secrets.WEBHOOK_URL }}
           exit 0
         else
           echo "Differences found. Updating fork..."
+          git push --force-with-lease
+          curl -X POST --data-urlencode "payload={\"channel\": \"#チーム開発_チーム6\", \"username\": \"webhookbot\", \"text\": \" Deployed to vercel. Check https://the-hack-2022-nov-team-6.vercel.app \"}" ${{ secrets.WEBHOOK_URL }}
         fi
