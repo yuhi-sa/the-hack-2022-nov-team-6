@@ -1,5 +1,4 @@
 import { getPostData } from '../../../lib/notion'
-import { Suspense } from 'react';
 type params = {
   params: {
     pageId: string
