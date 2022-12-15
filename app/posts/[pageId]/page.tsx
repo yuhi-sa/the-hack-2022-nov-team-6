@@ -18,7 +18,7 @@ async function Post(params: params) {
       </div>
       <img src={post.thumbnail} alt='thumbnail' className='aspect-[3/2] object-cover rounded-lg' />
       <section
-        className='prose lg:prose-xl prose-stone'
+        className='prose lg:prose-xl prose-invert'
         dangerouslySetInnerHTML={{ __html: post.html }}
       ></section>
     </div>

@@ -45,6 +45,19 @@ module.exports = {
           'Noto Color Emoji',
         ],
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            color: '#b2c4dd',
+            a: {
+              color: '#51cbda',
+              '&:hover': {
+                color: '#80deea',
+              },
+            },
+          },
+        },
+      },
     },
   },
   plugins: [
