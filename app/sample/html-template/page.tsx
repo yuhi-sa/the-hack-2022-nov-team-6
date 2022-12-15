@@ -1,4 +1,5 @@
 import { blogConfig } from '../../../blog.config'
+import Breadcrumb from '../../../components/common/Breadcrumb'
 
 export default function HtmlTemplate() {
   return (
@@ -83,7 +84,6 @@ export default function HtmlTemplate() {
               </a>
             </div>
           </section>
-
           <section className='sample border border-white/20 p-4 relative my-8'>
             <h2 className='absolute top-0 left-0 bg-white text-black text-xs px-2'>
               パンくずリスト
@@ -102,6 +102,8 @@ export default function HtmlTemplate() {
               </ul>
             </div>
           </section>
+          {/* コンポーネントを使用したパンくずリスト */}
+          <Breadcrumb />
 
           <section className='sample border border-white/20 p-4 relative my-8'>
             <h2 className='absolute top-0 left-0 bg-white text-black text-xs px-2'>
@@ -128,7 +130,6 @@ export default function HtmlTemplate() {
               </ul>
             </div>
           </section>
-
           <section className='sample border border-white/20 p-4 relative my-8'>
             <h2 className='absolute top-0 left-0 bg-white text-black text-xs px-2'>
               記事個別ページ
