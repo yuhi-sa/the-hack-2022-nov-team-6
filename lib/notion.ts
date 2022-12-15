@@ -34,7 +34,15 @@ const initNotionClient = (): Client => {
 
 export async function getPostsData(): Promise<Post[]> {
   const notion = initNotionClient()
-  const response = await notion.databases.query({ database_id : process.env.NOTION_POSTS_DATABASE_ID as string })
+  const response = await notion.databases.query({ database_id : process.env.NOTION_POSTS_DATABASE_ID as string,
+    filter: {
+      and: [{
+        "property": "is_published",
+        "select": {
+          "equals": 'true'
+        }
+      }]
+    }})
   const posts = await Promise.all(response.results.map( async (result:any) => {    
     try {
       const postId = result.properties['post_id'].number
