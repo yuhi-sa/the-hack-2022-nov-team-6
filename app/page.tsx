@@ -1,7 +1,16 @@
-export default function Home() {
+import List from "../components/List";
+import { getPostsData } from "../lib/notion";
+
+
+export default async function Home() {
+  const posts = await getPostsData()
+  if (posts.length === 0) {
+    return <p>投稿がありません。</p>
+  }
+
   return (
     <>
-      <h1 className='text-blue-500 text-5xl'>スタイルが当たっているか確認</h1>
+      <List posts={posts} />
     </>
   )
 }
