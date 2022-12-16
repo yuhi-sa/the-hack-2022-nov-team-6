@@ -1,8 +1,8 @@
 import { Client } from '@notionhq/client'
-import { notFound } from "next/navigation"
-import grayMatter from 'gray-matter'
 import { parseISO, format } from 'date-fns'
+import grayMatter from 'gray-matter'
 import { marked } from "marked"
+import { notFound } from "next/navigation"
 import { NotionToMarkdown } from 'notion-to-md'
 
 export type Post = {

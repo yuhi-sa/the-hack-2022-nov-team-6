@@ -1,7 +1,7 @@
 'use client'
 
-import { useState } from 'react'
 import Link from 'next/link'
+import { useState } from 'react'
 import { blogConfig } from '../../blog.config'
 import GlobalNav from './GlobalNav'
 import MenuButton from './MenuButton'
