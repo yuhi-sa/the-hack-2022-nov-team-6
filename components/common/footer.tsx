@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { blogConfig } from '../../../blog.config'
 
-export default function footer() {
+export default function Footer() {
   return (
     <section className='bg-gray-200'>
       <div className='max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8'>
