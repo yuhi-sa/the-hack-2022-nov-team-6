@@ -27,9 +27,9 @@ const Breadcrumb = () => {
             <Link href={'/'}>Home</Link>
           </li>
           {paths.map((path, i) => (
-            <li className='shrink-0'>
+            <li className='shrink-0' key={i}>
               {'>'}
-              <Link href={roots[i + 1]} key={i}>
+              <Link href={roots[i + 1]}>
                 {toUpperFirstLetter(path)}
               </Link>
             </li>
