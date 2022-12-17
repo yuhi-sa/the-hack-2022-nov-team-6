@@ -21,7 +21,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <img
             src='https://picsum.photos/900/600.webp'
             alt='メイン画像'
-            className='w-full aspect-[3/2] lg:aspect-[2/1] object-cover'
+            className='w-full aspect-[3/2] md:aspect-[2/1] lg:aspect-[3/1] object-cover'
           />
           <p className='absolute bottom-3 right-0 mx-4 pt-1 px-2 text-white bg-black/40'>
             {blogConfig.blogDetails}
