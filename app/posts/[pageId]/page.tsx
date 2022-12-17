@@ -1,4 +1,6 @@
+import Image from 'next/image'
 import { getPostData } from '../../../lib/notion'
+
 type params = {
   params: {
     pageId: string
@@ -15,7 +17,7 @@ async function Post(params: params) {
           <p>{post.publishedAt}</p>
         </div>
       </div>
-      <img src={post.thumbnail} alt='thumbnail' className='aspect-[3/2] object-cover rounded-lg' />
+      <Image src={post.thumbnail} alt='thumbnail' width={800} height={600} className='aspect-[3/2] object-cover rounded-lg' />
       <section
         className='prose lg:prose-xl prose-invert'
         dangerouslySetInnerHTML={{ __html: post.html }}

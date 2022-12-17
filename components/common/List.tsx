@@ -1,7 +1,7 @@
 import { parseISO, format } from 'date-fns'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Post } from '../lib/notion'
+import { Post } from '../../lib/notion'
 
 export default function List({posts}: {posts: Post[]}) {
     return (
@@ -25,8 +25,8 @@ export default function List({posts}: {posts: Post[]}) {
                     <Image
                         src={post.thumbnail}
                         alt={post.title}
-                        width='50'
-                        height='50'
+                        width='800'
+                        height='600'
                         className='lg:w-1/4 lg:object-cover lg:object-center'
                     />
                 </article>
