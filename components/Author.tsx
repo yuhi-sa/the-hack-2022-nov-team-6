@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 const Author = () => {
   return (
     <>
@@ -13,18 +15,18 @@ const Author = () => {
         ダミーコピーです手はおっかさんの演奏硝子屋をセロに思ったばこだた。それかダミーコピーです上手どもっさと
       </p>
       <p className='mt-2 text-center text-sm'>
-        <a href='component/Author#'>» もっと詳しく</a>
+        <Link href='../about'>» もっと詳しく</Link>
       </p>
       <div className='flex gap-4 justify-center mt-4'>
-        <a href='component/Author#' className='bg-gray-400'>
+        <Link href='#' className='bg-gray-400'>
           Icon
-        </a>
-        <a href='component/Author#' className='bg-gray-400'>
+        </Link>
+        <Link href='#' className='bg-gray-400'>
           Icon
-        </a>
-        <a href='component/Author#' className='bg-gray-400'>
+        </Link>
+        <Link href='#' className='bg-gray-400'>
           Icon
-        </a>
+        </Link>
       </div>
     </>
   )

@@ -23,7 +23,7 @@ const GlobalNav = ({ isMobileMenuActive }: Props) => {
         </li>
         <li>
           <Link
-            href='#'
+            href='../../about'
             className='flex md:block justify-between after:content-["»"] md:after:content-none after:mr-1 after:text-link md:hover:text-link md:hover:underline md:hover:decoration-wavy md:block p-3 md:p-0 bg-zinc-500/20 active:bg-zinc-500/30 md:bg-inherit active:md:bg-inherit'
           >
             About
@@ -35,40 +35,6 @@ const GlobalNav = ({ isMobileMenuActive }: Props) => {
             className='flex md:block justify-between after:content-["»"] md:after:content-none after:mr-1 after:text-link md:hover:text-link md:hover:underline md:hover:decoration-wavy md:block p-3 md:p-0 bg-zinc-500/20 active:bg-zinc-500/30 md:bg-inherit active:md:bg-inherit'
           >
             記事一覧
-          </Link>
-          <ul className='hidden'>
-            <li>
-              <Link
-                href='../../sample'
-                className='flex md:block justify-between after:content-["»"] md:after:content-none after:mr-1 after:text-link md:hover:text-link md:hover:underline md:hover:decoration-wavy md:block p-3 md:p-0 bg-zinc-500/20 active:bg-zinc-500/30 md:bg-inherit active:md:bg-inherit'
-              >
-                リスト項目1
-              </Link>
-            </li>
-            <li>
-              <Link
-                href='#'
-                className='flex md:block justify-between after:content-["»"] md:after:content-none after:mr-1 after:text-link md:hover:text-link md:hover:underline md:hover:decoration-wavy md:block p-3 md:p-0 bg-zinc-500/20 active:bg-zinc-500/30 md:bg-inherit active:md:bg-inherit'
-              >
-                リスト項目2
-              </Link>
-            </li>
-            <li>
-              <Link
-                href='#'
-                className='flex md:block justify-between after:content-["»"] md:after:content-none after:mr-1 after:text-link md:hover:text-link md:hover:underline md:hover:decoration-wavy md:block p-3 md:p-0 bg-zinc-500/20 active:bg-zinc-500/30 md:bg-inherit active:md:bg-inherit'
-              >
-                リスト項目3
-              </Link>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <Link
-            href='../../sample/html-template'
-            className='flex md:block justify-between after:content-["»"] md:after:content-none after:mr-1 after:text-link md:hover:text-link md:hover:underline md:hover:decoration-wavy md:block p-3 md:p-0 bg-zinc-500/20 active:bg-zinc-500/30 md:bg-inherit active:md:bg-inherit'
-          >
-            テンプレート(仮)
           </Link>
         </li>
       </ul>
