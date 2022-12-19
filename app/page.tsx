@@ -1,6 +1,6 @@
 import Link from 'next/link'
-import List from '../components/List'
-import { getPostsData } from '../lib/notion'
+import List from "../components/common/List"
+import { getPostsData } from "../lib/notion"
 
 export default async function Home() {
   const posts = await getPostsData()

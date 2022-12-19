@@ -1,7 +1,7 @@
 import { parseISO, format } from 'date-fns'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Post } from '../lib/notion'
+import { Post } from '../../lib/notion'
 
 export default function List({ posts }: { posts: Post[] }) {
   return (
