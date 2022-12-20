@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { FaTwitter, FaInstagramSquare, FaGithubAlt } from 'react-icons/fa'
 import { getUsersData } from '../../lib/notion'
 import { FaTwitter, FaInstagramSquare, FaGithubAlt } from 'react-icons/fa'
 
