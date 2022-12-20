@@ -25,7 +25,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             alt='メイン画像'
             width={800}
             height={600}
-            className='w-full aspect-[3/2] md:aspect-[2/1] lg:aspect-[3/1] object-cover'
+            className='w-full aspect-[4/1] md:aspect-[5/1] lg:aspect-[6/1] object-cover'
           />
           <p className='absolute bottom-3 right-0 mx-4 pt-1 px-2 text-white bg-black/40'>
             {blogConfig.blogDetails}
