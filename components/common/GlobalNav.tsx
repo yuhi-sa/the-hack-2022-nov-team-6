@@ -31,7 +31,7 @@ const GlobalNav = ({ isMobileMenuActive }: Props) => {
         </li>
         <li>
           <Link
-            href='#'
+            href='../../list'
             className='flex md:block justify-between after:content-["»"] md:after:content-none after:mr-1 after:text-link md:hover:text-link md:hover:underline md:hover:decoration-wavy md:block p-3 md:p-0 bg-zinc-500/20 active:bg-zinc-500/30 md:bg-inherit active:md:bg-inherit'
           >
             記事一覧
