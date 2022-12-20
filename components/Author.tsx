@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { User } from '../lib/notion'
+import { FaTwitter, FaInstagramSquare, FaGithubAlt } from 'react-icons/fa'
 
 const Author = ({ user }: { user: User }) => {
   return (
@@ -14,15 +15,23 @@ const Author = ({ user }: { user: User }) => {
         </p>
       </div>
       <p className='mt-2 text-center text-sm'>
-        <Link href='../about'>» もっと詳しく</Link>
+        <Link href='../about' className='hover:border-b hover:border-current hover:border-dotted'>
+          » もっと詳しく
+        </Link>
       </p>
       <div className='flex gap-4 justify-center mt-4'>
-        <Link href={`https://twitter.com/${user.twitter}`} className='bg-gray-400'>
-          <Image src='/twitter.png' alt={user.twitter} width='30' height='30' />
+        <Link href={`https://twitter.com/${user.twitter}`} className='text-2xl hover:text-link'>
+          <FaTwitter />
         </Link>
-        <Link href={`https://www.instagram.com/${user.instagram}`} className='bg-gray-400'>
-          <Image src='/instagram.png' alt={user.instagram} width='30' height='30' />
+        <Link
+          href={`https://www.instagram.com/${user.instagram}`}
+          className='text-2xl hover:text-link'
+        >
+          <FaInstagramSquare />
         </Link>
+        <span className='text-2xl hover:text-link text-base/25'>
+          <FaGithubAlt />
+        </span>
       </div>
     </>
   )
