@@ -22,5 +22,3 @@ npm run dev
 
 ## デプロイリンク
 https://the-hack-2022-nov-team-6.vercel.app
-
-[the-hack-2022-nov-team-6](https://github.com/yuhi-sa/the-hack-2022-nov-team-6/blob/main/.github/workflows/scheduled_sync.yml)でフォークしてvercelにデプロイしています。
