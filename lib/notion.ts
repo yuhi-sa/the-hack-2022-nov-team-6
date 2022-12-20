@@ -20,7 +20,7 @@ export type Post = {
 export type User = {
   userId: number,
   twitter: string,
-  instagram: boolean,
+  instagram: string,
   name: string,
   icon: string,
   html: string
