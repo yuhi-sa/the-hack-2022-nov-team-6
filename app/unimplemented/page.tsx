@@ -3,4 +3,4 @@ const Uninplemented = () => {
       <p>未実装の機能です</p>
     )
   }
-  export default Uninplemented
+export default Uninplemented
